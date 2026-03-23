@@ -32,19 +32,20 @@ const Navbar = ({mode, setMode}) => {
 
   return (
     <>
-      <AppBar 
+      <AppBar
         position="fixed" 
         elevation={0}
         sx={{ 
-          background: "#0e0f0d",
-          px: "6vw",
+          backgroundColor: "background.paper",
+          borderColor: "divider",
+          px: { xs: 3, md: "6vw" },
           py: 2
         }}
       >
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           
           {/* LOGO */}
-          <Typography sx={{ fontFamily: "Fraunces", fontWeight: 300 }}>
+          <Typography variant="h4" sx={{ fontWeight: 300 }}>
             Assan <strong>Oussenl</strong>
           </Typography>
 
@@ -59,7 +60,7 @@ const Navbar = ({mode, setMode}) => {
 
           {/* MENU MOBILE (ICON) */}
           <IconButton
-            sx={{ display: { xs: "block", md: "none" }, color: "white" }}
+            sx={{ display: { xs: "block", md: "none" }, color: "text.primary" }}
             onClick={() => setOpen(true)}
           >
             <MenuIcon />
@@ -77,7 +78,7 @@ const Navbar = ({mode, setMode}) => {
         <Box
           sx={{
             width: 250,
-            background: "#0e0f0d",
+            backgroundColor: "background.paper",
             height: "100%",
             p: 3
           }}
@@ -89,7 +90,7 @@ const Navbar = ({mode, setMode}) => {
               onClick={() => setOpen(false)}
               sx={{
                 display: "block",
-                color: "white",
+                color: "text.primary",
                 mb: 2,
                 textAlign: "left"
               }}

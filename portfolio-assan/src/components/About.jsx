@@ -7,10 +7,11 @@ const About = () =>{
     <Box
       id="about"
       sx={{
-        background: "#141512",
-        borderTop: "1px solid #252620",
-        px: "6vw",
-        py: "6rem"
+        backgroundColor: "background.paper",
+        borderTop: "1px solid",
+        borderColor: "divider",
+        px: { xs: 3, md: "6vw" },
+        py: { xs: 10, md: 12 }
       }}
     >
 
@@ -20,11 +21,12 @@ const About = () =>{
     <Grid item xs={12} md={6}>
       <Reveal>
         <Box
-         sx={{
+          sx={{
             aspectRatio: "4/5",
             maxWidth: "380px",
-            border: "1px solid #252620",
-            background: "#191a17",
+            border: "1px solid",
+            borderColor: "divider",
+            backgroundColor: "background.default",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -34,9 +36,9 @@ const About = () =>{
             '&:hover':{
                 transform: 'scale(1.05)'
             }
-         }}
+          }}
         >
-         <Box
+          <Box
           component="img"
           src={Profil}
           alt="Assan Mbete"
@@ -53,27 +55,26 @@ const About = () =>{
           bottom: 10,
           left: 10,
           fontSize: "0.7rem",
-          color: "#b5b09f",
+          color: "text.secondary",
           background: "rgba(0,0,0,0.5)",
           padding: "2px 6px",
           borderRadius: "4px"
         }}
       >
-        Foumban, Cameroun
+        Yaoundé, Cameroun
       </Typography>
-       </Box>
-     </Reveal>
-   </Grid>
+        </Box>
+      </Reveal>
+    </Grid>
 
         {/* TEXTE */}
         <Grid item xs={12} md={6}>
           
           <Reveal delay={0.2}>
             <Typography
+              variant="overline"
               sx={{
                 color: "primary.main",
-                letterSpacing: "0.2em",
-                fontSize: "0.7rem",
                 mb: 3
               }}
             >
@@ -83,9 +84,8 @@ const About = () =>{
 
           <Reveal delay={0.3}>
             <Typography
+              variant="h2"
               sx={{
-                fontFamily: "Fraunces",
-                fontSize: "2.5rem",
                 mb: 3
               }}
             >
@@ -94,21 +94,21 @@ const About = () =>{
           </Reveal>
 
           <Reveal delay={0.4}>
-            <Typography sx={{ color: "#b5b09f", mb: 2 }}>
+            <Typography variant="body1" sx={{ color: "text.secondary", mb: 2 }}>
               Je conçois des applications web modernes, performantes et maintenables.
               J'accorde une grande importance à la qualité du code et à l'expérience utilisateur.
             </Typography>
           </Reveal>
 
           <Reveal delay={0.5}>
-            <Typography sx={{ color: "#b5b09f", mb: 2 }}>
+            <Typography variant="body1" sx={{ color: "text.secondary", mb: 2 }}>
               Mon parcours chez <strong>Lapnomba</strong> m'a permis de consolider mon expertise
               en intégration d'API REST et développement front-end avancé.
             </Typography>
           </Reveal>
 
           <Reveal delay={0.6}>
-            <Typography sx={{ color: "#b5b09f", mb: 3 }}>
+            <Typography variant="body1" sx={{ color: "text.secondary", mb: 3 }}>
               Curieux et en apprentissage continu, j'explore actuellement <strong>React avancé</strong>.
             </Typography>
           </Reveal>
@@ -122,8 +122,8 @@ const About = () =>{
                   label={item}
                   variant="outlined"
                   sx={{
-                    borderColor: "#175867",
-                    color: "#0a9e0c",
+                    borderColor: "primary.main",
+                    color: "primary.main",
                     fontSize: "0.7rem"
                   }}
                 />

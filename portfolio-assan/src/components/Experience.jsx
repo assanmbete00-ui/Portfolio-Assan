@@ -7,18 +7,17 @@ export default function Experience() {
     <Box
       id="experience"
       sx={{
-        px: "6vw",
-        py: "6rem"
+        px: { xs: 3, md: "6vw" },
+        py: { xs: 10, md: 12 }
       }}
     >
 
       {/* TITRE */}
       <Reveal>
         <Typography
+          variant="overline"
           sx={{
             color: "primary.main",
-            letterSpacing: "0.2em",
-            fontSize: "0.7rem",
             mb: 2
           }}
         >
@@ -28,9 +27,8 @@ export default function Experience() {
 
       <Reveal delay={0.2}>
         <Typography
+          variant="h2"
           sx={{
-            fontFamily: "Fraunces",
-            fontSize: "2.5rem",
             mb: 4
           }}
         >
@@ -48,16 +46,16 @@ export default function Experience() {
               spacing={4}
               sx={{
                 py: 4,
-                borderBottom: "1px solid #252620"
+                borderBottom: "1px solid",
+                borderColor: "divider"
               }}
             >
 
               {/* GAUCHE */}
               <Grid item xs={12} md={4}>
                 <Typography
+                  variant="overline"
                   sx={{
-                    fontSize: "0.75rem",
-                    letterSpacing: "0.1em",
                     color: "primary.main",
                     mb: 1
                   }}
@@ -66,9 +64,9 @@ export default function Experience() {
                 </Typography>
 
                 <Typography
+                  variant="body2"
                   sx={{
-                    fontSize: "0.85rem",
-                    color: "gray"
+                    color: "text.secondary"
                   }}
                 >
                   {exp.company}
@@ -78,9 +76,8 @@ export default function Experience() {
               {/* DROITE */}
               <Grid item xs={12} md={8}>
                 <Typography
+                  variant="h4"
                   sx={{
-                    fontFamily: "Fraunces",
-                    fontSize: "1.4rem",
                     mb: 2
                   }}
                 >
@@ -88,9 +85,9 @@ export default function Experience() {
                 </Typography>
 
                 <Typography
+                  variant="body1"
                   sx={{
-                    color: "#b5b09f",
-                    lineHeight: 1.8
+                    color: "text.secondary",
                   }}
                 >
                   {exp.description}

@@ -2,22 +2,22 @@ const skills = [
   {
     category: "Langages",
     title: "Fondations",
-    items: ["HTML5", "CSS3", "JavaScript", "Java", "SQL"]
+    items: ["HTML5", "CSS3", "JavaScript", "Python", "SQL", "mongoBD"]
   },
   {
     category: "Frameworks",
     title: "Front & Back",
-    items: ["React.js", "Node.js"]
+    items: ["React.js", "React natif", "TypeScript", "Node.js"]
   },
   {
     category: "Outils",
     title: "Workflow",
-    items: ["Git", "GitHub", "API REST", "Linux", "VS Code"]
+    items: ["Git", "GitHub", "API REST", "Linux", "VS Code", "GitLab",]
   },
   {
     category: "En apprentissage",
     title: "Évolution",
-    items: ["React avancé", "Next.js", "TypeScript"]
+    items: ["React avancé", "Next.js", "Vue.js", "Express"]
   }
 ]
 

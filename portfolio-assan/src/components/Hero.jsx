@@ -1,5 +1,5 @@
 import { Box, Typography, Button, Container } from "@mui/material"
-import { motion } from "framer-motion"
+import { motion as Motion } from "framer-motion"
 
 export default function Hero() {
 
@@ -22,14 +22,14 @@ export default function Hero() {
         display: "flex",
         alignItems: "flex-end",
         position: "relative",
-        px: "6vw",
-        pb: "6rem"
+        px: { xs: 3, md: "6vw" },
+        pb: { xs: 8, md: 12 }
       }}
     >
 
       {/* TEXTE BACKGROUND */}
       <Typography
-        component={motion.div}
+        component={Motion.div}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2 }}
@@ -42,7 +42,8 @@ export default function Hero() {
           fontFamily: "Fraunces",
           fontWeight: 100,
           color: "transparent",
-          WebkitTextStroke: "1px rgba(138,158,130,0.1)",
+          WebkitTextStroke: (theme) =>
+            `1px ${theme.palette.mode === "dark" ? "rgba(138,167,126,0.14)" : "rgba(47,111,94,0.18)"}`,
           whiteSpace: "nowrap",
           zIndex: 0
         }}
@@ -54,15 +55,14 @@ export default function Hero() {
 
         {/* TAG */}
         <Typography
-          component={motion.div}
+          component={Motion.div}
+          variant="overline"
           variants={fadeUp}
           initial="hidden"
           animate="visible"
           custom={1}
           sx={{
             color: "primary.main",
-            letterSpacing: "0.2em",
-            fontSize: "0.7rem",
             mb: 3
           }}
         >
@@ -71,14 +71,13 @@ export default function Hero() {
 
         {/* TITRE */}
         <Typography
-          component={motion.div}
+          component={Motion.div}
+          variant="h1"
           variants={fadeUp}
           initial="hidden"
           animate="visible"
           custom={2}
           sx={{
-            fontFamily: "Fraunces",
-            fontWeight: 100,
             fontSize: "clamp(3.5rem, 9vw, 8rem)",
             lineHeight: 1,
             mb: 4
@@ -86,12 +85,14 @@ export default function Hero() {
         >
           Njouenwet <br />
           Mbete <br />
-          <em style={{ color: "#b5b09f" }}>Assan</em>
+          <Box component="em" sx={{ color: "text.secondary" }}>
+            Assan
+          </Box>
         </Typography>
 
         {/* BAS */}
         <Box
-          component={motion.div}
+          component={Motion.div}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
@@ -106,10 +107,10 @@ export default function Hero() {
 
           {/* DESCRIPTION */}
           <Typography
+            variant="body1"
             sx={{
               maxWidth: "400px",
-              color: "gray",
-              lineHeight: 1.8
+              color: "text.secondary",
             }}
           >
             Développeur web passionné par la création d'applications modernes et interactives.
@@ -121,17 +122,19 @@ export default function Hero() {
 
             {/* BOUTON PROJETS */}
             <Button
-              component="a"
-              href="#projects"       
-              component={motion.a}
+              href="#projects"        
+              component={Motion.a}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               variant="contained"
               sx={{
-                background: "#e8e4db",
-                color: "#000",
+                backgroundColor: "primary.main",
+                color: (theme) => theme.palette.getContrastText(theme.palette.primary.main),
                 px: 3,
-                textDecoration: "none"
+                textDecoration: "none",
+                "&:hover": {
+                  backgroundColor: "primary.dark"
+                }
               }}
             >
               Voir mes projets
@@ -139,14 +142,14 @@ export default function Hero() {
 
             {/* BOUTON CONTACT */}
             <Button
-              component="a"
               href="#contact"       
-              component={motion.a}
+              component={Motion.a}
               whileHover={{ x: 5 }}
               variant="text"
               sx={{
-                borderBottom: "1px solid gray",
-                color: "gray",
+                borderBottom: "1px solid",
+                borderColor: "divider",
+                color: "text.secondary",
                 textDecoration: "none"
               }}
             >
