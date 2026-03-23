@@ -4,8 +4,9 @@ export default function Footer() {
   return (
     <Box
       sx={{
-        borderTop: "1px solid #252620",
-        px: "6vw",
+        borderTop: "1px solid",
+        borderColor: "divider",
+        px: { xs: 3, md: "6vw" },
         py: 3,
         display: "flex",
         justifyContent: "space-between",
@@ -17,27 +18,27 @@ export default function Footer() {
 
       {/* GAUCHE */}
       <Typography
+        variant="overline"
         sx={{
-          fontSize: "0.75rem",
-          color: "gray",
-          letterSpacing: "0.08em"
+          color: "text.secondary",
+          textTransform: "none"
         }}
       >
         © 2026{" "}
-        <span style={{ color: "#8a9e82" }}>
+        <Typography component="span" sx={{ color: "primary.main" }}>
           Njouenwet Mbete Assan Oussenl
-        </span>
+        </Typography>
       </Typography>
 
       {/* DROITE */}
       <Typography
+        variant="overline"
         sx={{
-          fontSize: "0.75rem",
-          color: "gray",
-          letterSpacing: "0.08em"
+          color: "text.secondary",
+          textTransform: "none"
         }}
       >
-        Développeur Web · Foumban, Cameroun
+        Développeur Web · Yaoundé, Cameroun
       </Typography>
 
     </Box>

@@ -7,10 +7,11 @@ export default function Contact() {
     <Box
       id="contact"
       sx={{
-        background: "#141512",
-        borderTop: "1px solid #252620",
-        px: "6vw",
-        py: "6rem"
+        backgroundColor: "background.paper",
+        borderTop: "1px solid",
+        borderColor: "divider",
+        px: { xs: 3, md: "6vw" },
+        py: { xs: 10, md: 12 }
       }}
     >
 
@@ -20,10 +21,9 @@ export default function Contact() {
         <Grid item xs={12} md={6}>
           <Reveal>
             <Typography
+              variant="overline"
               sx={{
                 color: "primary.main",
-                letterSpacing: "0.2em",
-                fontSize: "0.7rem",
                 mb: 2
               }}
             >
@@ -33,9 +33,8 @@ export default function Contact() {
 
           <Reveal delay={0.2}>
             <Typography
+              variant="h2"
               sx={{
-                fontFamily: "Fraunces",
-                fontSize: "3rem",
                 mb: 3
               }}
             >
@@ -44,7 +43,7 @@ export default function Contact() {
           </Reveal>
 
           <Reveal delay={0.3}>
-            <Typography sx={{ color: "gray", maxWidth: "400px" }}>
+            <Typography variant="body1" sx={{ color: "text.secondary", maxWidth: "400px" }}>
               Disponible pour des projets freelance, collaborations ou opportunités professionnelles.
               N'hésitez pas à me contacter.
             </Typography>
@@ -66,8 +65,9 @@ export default function Contact() {
                     justifyContent: "space-between",
                     alignItems: "center",
                     py: 2,
-                    borderBottom: "1px solid #252620",
-                    color: "#e8e4db",
+                    borderBottom: "1px solid",
+                    borderColor: "divider",
+                    color: "text.primary",
                     transition: "0.3s",
                     "&:hover": {
                       pl: 2
@@ -77,16 +77,15 @@ export default function Contact() {
 
                   <Box>
                     <Typography
+                      variant="overline"
                       sx={{
-                        fontSize: "0.7rem",
-                        letterSpacing: "0.15em",
-                        color: "gray"
+                        color: "text.secondary"
                       }}
                     >
                       {contact.label}
                     </Typography>
 
-                    <Typography sx={{ fontSize: "0.9rem" }}>
+                    <Typography variant="body2">
                       {contact.value}
                     </Typography>
                   </Box>
@@ -94,7 +93,7 @@ export default function Contact() {
                   {/* FLECHE */}
                   <Typography
                     sx={{
-                      color: "#2f3029",
+                      color: "divider",
                       fontSize: "1.2rem",
                       transition: "0.3s",
                       "&:hover": {

@@ -7,20 +7,20 @@ export default function Projects() {
     <Box
       id="projects"
       sx={{
-        background: "#141512",
-        borderTop: "1px solid #252620",
-        px: "6vw",
-        py: "6rem"
+        backgroundColor: "background.paper",
+        borderTop: "1px solid",
+        borderColor: "divider",
+        px: { xs: 3, md: "6vw" },
+        py: { xs: 10, md: 12 }
       }}
     >
 
       {/* TITRE */}
       <Reveal>
         <Typography
+          variant="overline"
           sx={{
             color: "primary.main",
-            letterSpacing: "0.2em",
-            fontSize: "0.7rem",
             mb: 2
           }}
         >
@@ -30,9 +30,8 @@ export default function Projects() {
 
       <Reveal delay={0.2}>
         <Typography
+          variant="h2"
           sx={{
-            fontFamily: "Fraunces",
-            fontSize: "2.5rem",
             mb: 4
           }}
         >
@@ -46,27 +45,27 @@ export default function Projects() {
         {projects.map((project, index) => (
           <Reveal key={project.id} delay={index * 0.2}>
             <Box
-              sx={{
-                display: "grid",
-                gridTemplateColumns: "60px 1fr 100px",
+                sx={{
+                  display: "grid",
+                gridTemplateColumns: { xs: "1fr", md: "60px 1fr 100px" },
                 alignItems: "center",
                 gap: 2,
                 py: 3,
-                borderBottom: "1px solid #252620",
+                borderBottom: "1px solid",
+                borderColor: "divider",
                 position: "relative",
                 transition: "0.3s",
                 "&:hover": {
-                  background: "rgba(138,158,130,0.05)"
+                  backgroundColor: "action.hover"
                 }
               }}
             >
 
               {/* NUMERO */}
               <Typography
+                variant="h4"
                 sx={{
-                  fontFamily: "Fraunces",
-                  fontSize: "2rem",
-                  color: "#2f3029"
+                  color: "divider"
                 }}
               >
                 {String(project.id).padStart(2, "0")}
@@ -75,9 +74,8 @@ export default function Projects() {
               {/* CONTENU */}
               <Box>
                 <Typography
+                  variant="h4"
                   sx={{
-                    fontFamily: "Fraunces",
-                    fontSize: "1.2rem",
                     mb: 1
                   }}
                 >
@@ -85,9 +83,9 @@ export default function Projects() {
                 </Typography>
 
                 <Typography
+                  variant="body2"
                   sx={{
-                    color: "gray",
-                    fontSize: "0.85rem",
+                    color: "text.secondary",
                     mb: 1
                   }}
                 >
@@ -100,10 +98,11 @@ export default function Projects() {
                     <Typography
                       key={i}
                       sx={{
-                        border: "1px solid #2f3029",
+                        border: "1px solid",
+                        borderColor: "divider",
                         fontSize: "0.65rem",
                         px: 1,
-                        color: "#8a9e82"
+                        color: "primary.main"
                       }}
                     >
                       {tag}
@@ -118,11 +117,12 @@ export default function Projects() {
                 target="_blank"
                 underline="none"
                 sx={{
-                  fontSize: "0.7rem",
+                  justifySelf: { xs: "start", md: "end" },
+                  fontSize: "0.75rem",
                   textTransform: "uppercase",
-                  color: "gray",
+                  color: "text.secondary",
                   "&:hover": {
-                    color: "#fff"
+                    color: "text.primary"
                   }
                 }}
               >

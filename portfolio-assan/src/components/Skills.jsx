@@ -7,18 +7,17 @@ export default function Skills() {
     <Box
       id="skills"
       sx={{
-        px: "6vw",
-        py: "6rem"
+        px: { xs: 3, md: "6vw" },
+        py: { xs: 10, md: 12 }
       }}
     >
 
       {/* TITLE */}
       <Reveal>
         <Typography
+          variant="overline"
           sx={{
             color: "primary.main",
-            letterSpacing: "0.2em",
-            fontSize: "0.7rem",
             mb: 2
           }}
         >
@@ -28,9 +27,8 @@ export default function Skills() {
 
       <Reveal delay={0.2}>
         <Typography
+          variant="h2"
           sx={{
-            fontFamily: "Fraunces",
-            fontSize: "2.5rem",
             mb: 4
           }}
         >
@@ -46,23 +44,23 @@ export default function Skills() {
             <Reveal delay={index * 0.2}>
               <Box
                 sx={{
-                  border: "1px solid #252620",
+                  border: "1px solid",
+                  borderColor: "divider",
                   p: 3,
                   height: "100%",
                   transition: "0.3s",
                   "&:hover": {
-                    background: "#191a17"
+                    backgroundColor: "action.hover"
                   }
                 }}
               >
-                <Typography sx={{ color: "primary.main", fontSize: "0.7rem", mb: 1 }}>
+                <Typography variant="overline" sx={{ color: "primary.main", mb: 1 }}>
                   {skill.category}
                 </Typography>
 
                 <Typography
+                  variant="h4"
                   sx={{
-                    fontFamily: "Fraunces",
-                    fontSize: "1.2rem",
                     mb: 2
                   }}
                 >
@@ -76,8 +74,8 @@ export default function Skills() {
                       label={item}
                       variant="outlined"
                       sx={{
-                        borderColor: "#2f3029",
-                        color: "#b5b09f",
+                        borderColor: "divider",
+                        color: "text.secondary",
                         fontSize: "0.7rem"
                       }}
                     />
@@ -98,10 +96,10 @@ export default function Skills() {
             <Box sx={{ mb: 2 }}>
 
               <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-                <Typography sx={{ fontSize: "0.8rem", color: "#b5b09f" }}>
+                <Typography variant="body2" sx={{ color: "text.secondary" }}>
                   {skill.name}
                 </Typography>
-                <Typography sx={{ fontSize: "0.7rem", color: "gray" }}>
+                <Typography variant="overline" sx={{ color: "text.secondary" }}>
                   {skill.value}%
                 </Typography>
               </Box>
@@ -111,9 +109,9 @@ export default function Skills() {
                 value={skill.value}
                 sx={{
                   height: 4,
-                  backgroundColor: "#2f3029",
+                  backgroundColor: "divider",
                   "& .MuiLinearProgress-bar": {
-                    backgroundColor: "#8a9e82"
+                    backgroundColor: "primary.main"
                   }
                 }}
               />
