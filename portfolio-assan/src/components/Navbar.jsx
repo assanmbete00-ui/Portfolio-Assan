@@ -46,7 +46,7 @@ const Navbar = ({mode, setMode}) => {
           
           {/* LOGO */}
           <Typography variant="h4" sx={{ fontWeight: 300 }}>
-            Assan <strong>Oussenl</strong>
+            M<strong>B</strong>
           </Typography>
 
           {/* MENU DESKTOP */}
