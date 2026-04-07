@@ -102,7 +102,7 @@ const About = () =>{
 
           <Reveal delay={0.5}>
             <Typography variant="body1" sx={{ color: "text.secondary", mb: 2 }}>
-              Mon parcours chez <strong>Lapnomba</strong> m'a permis de consolider mon expertise
+              Mon parcours chez <strong>Lapnomba.org,</strong> m'a permis de consolider mon expertise
               en intégration d'API REST et développement front-end avancé.
             </Typography>
           </Reveal>

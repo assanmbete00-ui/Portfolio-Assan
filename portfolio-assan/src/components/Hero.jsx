@@ -16,17 +16,16 @@ export default function Hero() {
   }
 
   return (
-    <Box
+    <Box id="hero"
       sx={{
         minHeight: "100vh",
         display: "flex",
         alignItems: "flex-end",
-        position: "relative",
+        position: "",
         px: { xs: 3, md: "6vw" },
         pb: { xs: 8, md: 12 }
       }}
     >
-
       {/* TEXTE BACKGROUND */}
       <Typography
         component={Motion.div}
@@ -99,9 +98,10 @@ export default function Hero() {
           custom={3}
           sx={{
             display: "flex",
-            justifyContent: "space-between",
-            flexWrap: "wrap",
-            gap: 4
+            flexDirection: "column",
+            alignItems: "flex-start",
+            gap: 3,
+            maxWidth: "500px"
           }}
         >
 
@@ -118,7 +118,11 @@ export default function Hero() {
           </Typography>
 
           {/* BOUTONS */}
-          <Box sx={{ display: "flex", gap: 2 }}>
+          <Box sx={{ 
+              display: "flex", 
+              gap: 2, 
+              flexWrap: "wrap"
+              }}>
 
             {/* BOUTON PROJETS */}
             <Button
