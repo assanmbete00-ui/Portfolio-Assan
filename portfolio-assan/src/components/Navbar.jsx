@@ -23,6 +23,7 @@ const Navbar = ({mode, setMode}) => {
       
 
   const menuItems = [
+    { label: "Accueil", link: "#hero" },
     { label: "À propos", link: "#about" },
     { label: "Compétences", link: "#skills" },
     { label: "Projets", link: "#projects" },
@@ -45,12 +46,26 @@ const Navbar = ({mode, setMode}) => {
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           
           {/* LOGO */}
-          <Typography variant="h4" sx={{ fontWeight: 300 }}>
-            M<strong>B</strong>
-          </Typography>
+        <Typography
+              component="a"
+              href="#hero"
+              variant="h4"
+            sx={{
+                fontWeight: 300,
+                textDecoration: "none",
+                color: "inherit",
+                cursor: "pointer",
+                transition: "0.3s",
+            "&:hover": {
+                opacity: 0.7
+        }
+      }}
+  >
+        M<strong>B</strong>
+      </Typography>
 
           {/* MENU DESKTOP */}
-          <Box sx={{ display: { xs: "none", md: "flex" }, gap: 3 }}>
+          <Box sx={{ display: { xs: "none", md: "flex" }, gap: 3, alignItems: "center" }}>
             {menuItems.map((item, index) => (
               <Button key={index} href={item.link} color="inherit">
                 {item.label}
